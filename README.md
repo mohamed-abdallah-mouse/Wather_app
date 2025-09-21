@@ -44,7 +44,7 @@ It also features a **dynamic theme** that changes color depending on the weather
 - 🌦️ **Weather alerts** → notify users about extreme conditions
 
 ## ▶️ Demo
-[Download APK](f) 
+[Download APK](https://drive.google.com/file/d/1d9YPBesNun_7oQ1ipSpEXB0p_2A9le_m/view?usp=drivesdk) 
 
 ## 👨‍💻 Author
 Mohamed Abdalla Moussa Ibrahim  
