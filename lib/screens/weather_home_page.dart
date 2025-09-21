@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/weather_cubit/weather_cubit.dart';
-import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/theme/theme.dart';
 
 class WeatherHomePage extends StatelessWidget {
@@ -9,9 +8,10 @@ class WeatherHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final WeatherModel weatherModel = BlocProvider.of<WeatherCubit>(
-      context,
-    ).weatherModel!;
+    final weatherModel = BlocProvider.of<WeatherCubit>(context).weatherModel;
+    if (weatherModel == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(

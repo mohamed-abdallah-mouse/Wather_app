@@ -1,11 +1,12 @@
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:weather_app/models/weather_model.dart';
 
 class WeatherServices {
   final String uRL = 'https://api.weatherapi.com/v1';
-  final String key = '66e5d7e5692547fca28142926252109';
+  final String key = 'ac053cbf55154ae8aff150454252109';
 
   Dio dio = Dio();
   Future<WeatherModel> getCurrentWeather(final String cityName) async {
@@ -14,6 +15,9 @@ class WeatherServices {
         '$uRL/current.json?key=$key&q=$cityName',
       );
       WeatherModel weatherModel = WeatherModel.json(response.data);
+      debugPrint('----------------${response.statusCode}');
+      debugPrint("Raw Response: ${response.data}");
+
       return weatherModel;
     } on DioException catch (e) {
       final String errorMessage =

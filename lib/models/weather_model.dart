@@ -17,8 +17,8 @@ class WeatherModel {
     return WeatherModel(
       date: DateTime.parse(json['current']['last_updated']),
       image: json['current']['condition']['icon'],
-      temb: json['current']['temp_c'],
-      windSpeed: json['current']['wind_kph'],
+      temb: (json['current']['temp_c'] as num).toDouble(),
+      windSpeed: (json['current']['wind_kph'] as num).toDouble(),
       weatherCondition: json['current']['condition']['text'],
       cityName: json['location']['name'],
     );
